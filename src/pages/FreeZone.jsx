@@ -1,8 +1,20 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar, FaBuilding, FaShieldAlt, FaClock, FaGlobe, FaBriefcase, FaUsers, FaRocket, FaIdCard } from 'react-icons/fa'
+import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar, FaBuilding, FaShieldAlt, FaClock, FaGlobe, FaBriefcase, FaUsers, FaRocket, FaIdCard, FaWhatsapp } from 'react-icons/fa'
 
 const FreeZone = () => {
+  const heroHighlights = [
+    { icon: <FaCheckCircle />, label: '100% foreign ownership' },
+    { icon: <FaGlobe />, label: '15+ free zones curated' },
+    { icon: <FaClock />, label: 'Fast-track licensing' }
+  ]
+
+  const heroStats = [
+    { value: '3-5 days', label: 'Typical license timeline' },
+    { value: '2000+', label: 'Companies launched' },
+    { value: 'End-to-end', label: 'Licensing • Visas • Banking' }
+  ]
+
   const keyFeatures = [
     '100% foreign ownership allowed',
     'Corporate and personal tax exemptions',
@@ -180,35 +192,91 @@ const FreeZone = () => {
 
   return (
     <div className="freezone-page-modern">
-      <section className="freezone-hero-modern">
-        <div className="freezone-hero-background"></div>
+      <section className="setup-hero">
+        <div className="setup-hero-ink primary" />
+        <div className="setup-hero-ink secondary" />
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="freezone-hero-content"
-          >
-            <Link to="/" className="back-to-home-link">
-              <FaArrowLeft /> Back to Home
-            </Link>
-            <h1 className="freezone-hero-title">UAE Free Zone Business Setup</h1>
-            <p className="freezone-hero-subtitle">
-              Assistance in establishing your company in a UAE Free Zone with full licensing, compliance, and registration support.
-            </p>
-            <div className="freezone-hero-buttons">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-primary">
+          <div className="setup-hero-grid">
+            <motion.div
+              className="setup-hero-copy"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link to="/" className="back-to-home-link">
+                <FaArrowLeft /> Back to Home
+              </Link>
+              <span className="hero-badge-modern">Free Zone</span>
+              <h1 className="setup-hero-title">UAE Free Zone Business Setup</h1>
+              <p className="setup-hero-subtitle">
+                Select the right jurisdiction, get transparent costs, and launch quickly with our licensing, visa, and banking specialists.
+              </p>
+
+              <div className="setup-pill-grid">
+                {heroHighlights.map((item) => (
+                  <div className="setup-pill" key={item.label}>
+                    <span className="pill-icon">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="setup-hero-actions">
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
                   Get Started Now <FaArrowRight />
                 </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-secondary">
+                <Link to="/contact" className="btn-ghost-modern">
                   Schedule a Call
                 </Link>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+
+              <div className="setup-hero-stats">
+                {heroStats.map((stat) => (
+                  <div className="setup-hero-stat" key={stat.label}>
+                    <span className="stat-value">{stat.value}</span>
+                    <span className="stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="setup-hero-card"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9 }}
+            >
+              <div className="setup-card-header">
+                <div>
+                  <p className="setup-card-kicker">What’s inside</p>
+                  <h3>Licensing, visas, banking—handled</h3>
+                  <p className="setup-card-subtext">Our launch squad runs approvals in parallel so you move in weeks, not months.</p>
+                </div>
+                <span className="setup-card-chip">
+                  <FaRocket /> Launch ready
+                </span>
+              </div>
+              <ul className="setup-card-list">
+                {keyFeatures.slice(0, 3).map((item) => (
+                  <li key={item}>
+                    <FaCheckCircle /> {item}
+                  </li>
+                ))}
+                <li>
+                  <FaCheckCircle /> Dedicated advisor & weekly updates
+                </li>
+              </ul>
+              <div className="setup-card-footer">
+                <div>
+                  <p className="setup-card-footer-title">Request tailored pricing</p>
+                  <p className="setup-card-footer-subtext">We match a free zone to your industry, visa count, and bank needs.</p>
+                </div>
+                <Link to="/contact" className="setup-card-link">
+                  Talk to an expert <FaArrowRight />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -324,7 +392,7 @@ const FreeZone = () => {
                   ))}
                 </ul>
                 <Link to="/contact" className="btn btn-primary btn-small">
-                  Contact US
+                  Contact Us
                 </Link>
               </motion.div>
             ))}
@@ -438,28 +506,29 @@ const FreeZone = () => {
         </div>
       </section>
 
-      <section className="freezone-cta-section">
+      <section className="cta-banner">
         <div className="container-modern">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="freezone-cta-content"
+            className="cta-banner-card"
           >
-            <h2 className="freezone-cta-title">Ready to Get Started?</h2>
-            <p className="freezone-cta-description">
-              Our expert team is here to guide you through every step of the process. Contact us today to begin your UAE business journey.
+            <span className="cta-kicker">Free zone specialists</span>
+            <h2 className="cta-title">Ready to launch in the right free zone?</h2>
+            <p className="cta-desc">
+              We’ll map the best jurisdiction, pricing, and visa mix for your business, then drive the licensing and banking workstreams.
             </p>
-            <div className="freezone-cta-buttons">
+            <div className="cta-actions">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-primary">
-                  Get Started Today <FaArrowRight />
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Book a discovery call <FaArrowRight />
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-secondary">
-                  Contact Our Experts
-                </Link>
+                <a href="https://wa.me/971554182103" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
+                  <FaWhatsapp /> Chat on WhatsApp
+                </a>
               </motion.div>
             </div>
           </motion.div>
@@ -470,4 +539,3 @@ const FreeZone = () => {
 }
 
 export default FreeZone
-

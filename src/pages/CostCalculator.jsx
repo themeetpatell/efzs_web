@@ -57,7 +57,17 @@ const CostCalculator = () => {
     const selectedActivity = getSelectedActivity()
     const visaCount = parseInt(formData.visas) || 0
 
-    if (!selectedZone) return 0
+    if (!selectedZone) {
+      return {
+        baseLicense: 0,
+        visaAllocationFee: 0,
+        establishmentCard: 0,
+        visaFee: 0,
+        medicalTest: 0,
+        emiratesId: 0,
+        total: 0
+      }
+    }
 
     const baseLicense = selectedZone.basePrice
     const activityMultiplier = selectedActivity?.multiplier || 1.0
@@ -612,4 +622,3 @@ const CostCalculator = () => {
 }
 
 export default CostCalculator
-

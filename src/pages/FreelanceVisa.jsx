@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom'
 import { FaCheckCircle, FaArrowRight, FaFileAlt, FaUserTie, FaUsers, FaGlobe, FaBriefcase, FaClock, FaShieldAlt, FaRocket, FaIdCard, FaHandshake, FaDollarSign, FaQuestionCircle, FaCertificate, FaPortrait, FaHeadset, FaPhone, FaWhatsapp, FaStar, FaBuilding } from 'react-icons/fa'
 
 const FreelanceVisa = () => {
+  const heroHighlights = [
+    'No physical office needed',
+    'Renewable freelance license',
+    '2-year residence visa'
+  ]
+
+  const heroStats = [
+    { value: 'AED 9,999', label: 'All-in yearly package' },
+    { value: '2 years', label: 'Visa validity' },
+    { value: 'Family-ready', label: 'Sponsor dependents' }
+  ]
+
   const packageInclusions = [
     {
       icon: <FaUserTie />,
@@ -96,29 +108,93 @@ const FreelanceVisa = () => {
 
   return (
     <div className="freelance-visa-page-modern">
-      <section className="page-hero-modern">
-        <div className="hero-background-modern">
-          <div className="hero-gradient-orb"></div>
-        </div>
+      <section className="setup-hero">
+        <div className="setup-hero-ink primary" />
+        <div className="setup-hero-ink secondary" />
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="page-hero-content-modern"
-          >
-            <Link to="/" className="back-link-modern">
-              ← Back to Home
-            </Link>
-            <h1 className="hero-title-modern">Free Zone Freelance Visa</h1>
-            <p className="hero-subtitle-modern">
-              Get your UAE freelance visa and work independently with complete legal compliance and flexibility
-            </p>
-            <div className="price-box-modern">
-              <div className="price-amount-modern">AED 9,999</div>
-              <div className="price-package-modern">Yearly Package (Renewable)</div>
-            </div>
-          </motion.div>
+          <div className="setup-hero-grid">
+            <motion.div
+              className="setup-hero-copy"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link to="/" className="back-to-home-link">
+                ← Back to Home
+              </Link>
+              <span className="hero-badge-modern">Freelance Visa</span>
+              <h1 className="setup-hero-title">Free Zone Freelance Visa</h1>
+              <p className="setup-hero-subtitle">
+                Launch your UAE freelance career with a compliant license, 2-year visa, and residency support—all without an office.
+              </p>
+
+              <div className="setup-pill-grid">
+                {heroHighlights.map((item) => (
+                  <div className="setup-pill" key={item}>
+                    <span className="pill-icon">
+                      <FaCheckCircle />
+                    </span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="setup-hero-actions">
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Get Free Consultation <FaArrowRight />
+                </Link>
+                <a href="https://wa.me/971554182103" className="btn-ghost-modern">
+                  Chat on WhatsApp
+                </a>
+              </div>
+
+              <div className="setup-hero-stats">
+                {heroStats.map((stat) => (
+                  <div className="setup-hero-stat" key={stat.label}>
+                    <span className="stat-value">{stat.value}</span>
+                    <span className="stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="setup-hero-card"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9 }}
+            >
+              <div className="setup-card-header">
+                <div>
+                  <p className="setup-card-kicker">Package snapshot</p>
+                  <h3>AED 9,999 / year</h3>
+                  <p className="setup-card-subtext">Permit, visa, co-working lease, and ID processing managed end-to-end.</p>
+                </div>
+                <span className="setup-card-chip">
+                  <FaRocket /> Ready to work
+                </span>
+              </div>
+              <ul className="setup-card-list">
+                {whyChoosePoints.slice(0, 3).map((item) => (
+                  <li key={item}>
+                    <FaCheckCircle /> {item}
+                  </li>
+                ))}
+                <li>
+                  <FaCheckCircle /> Dependents can be sponsored
+                </li>
+              </ul>
+              <div className="setup-card-footer">
+                <div>
+                  <p className="setup-card-footer-title">Next step</p>
+                  <p className="setup-card-footer-subtext">Pick your profession, share your documents, and we start your file in 24 hours.</p>
+                </div>
+                <Link to="/contact" className="setup-card-link">
+                  Start my file <FaArrowRight />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -365,40 +441,32 @@ const FreelanceVisa = () => {
       </section>
 
 
-      <section className="freelance-cta-section-blue">
+      <section className="cta-banner">
         <div className="container-modern">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="freelance-cta-content-blue"
+            className="cta-banner-card"
           >
-            <h2 className="freelance-cta-title-blue">Ready to Start Your Freelance Journey in UAE?</h2>
-            <p className="freelance-cta-desc-blue">
-              Get expert guidance and start your freelance visa application today. Our team is ready to help you every step of the way.
+            <span className="cta-kicker">Need a launch partner?</span>
+            <h2 className="cta-title">Ready to start your freelance journey in the UAE?</h2>
+            <p className="cta-desc">
+              Get expert guidance and start your freelance visa application today. Our team handles the paperwork while you focus on your craft.
             </p>
-            <div className="freelance-cta-buttons-blue">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/contact" className="btn btn-white">
-                  Get Free Consultation
+            <div className="cta-actions">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Get Free Consultation <FaArrowRight />
                 </Link>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="https://wa.me/971554182103" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <a href="https://wa.me/971554182103" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
                   <FaWhatsapp /> Chat on WhatsApp
                 </a>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="tel:+971554182103" className="btn btn-secondary">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <a href="tel:+971554182103" className="btn-ghost-modern">
                   <FaPhone /> Call +971 55 418 2103
                 </a>
               </motion.div>
@@ -411,4 +479,3 @@ const FreelanceVisa = () => {
 }
 
 export default FreelanceVisa
-

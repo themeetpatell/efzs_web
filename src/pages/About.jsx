@@ -1,36 +1,68 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaRocket, FaEye, FaBullseye, FaCheckCircle, FaArrowRight, FaUserTie, FaGavel, FaChartLine, FaUserCircle } from 'react-icons/fa'
+import {
+  FaRocket,
+  FaEye,
+  FaBullseye,
+  FaCheckCircle,
+  FaArrowRight,
+  FaUserTie,
+  FaGavel,
+  FaChartLine,
+  FaUserCircle,
+  FaHandshake,
+  FaShieldAlt,
+  FaClock
+} from 'react-icons/fa'
 
 const About = () => {
-  const coreValues = [
-    {
-      icon: <FaBullseye />,
-      title: 'Transparency',
-      description: 'Clear, honest communication with no hidden fees or surprises throughout the process.'
-    },
-    {
-      icon: <FaCheckCircle />,
-      title: 'Excellence',
-      description: 'Committed to delivering the highest quality service and exceeding client expectations.'
-    },
-    {
-      icon: <FaUserTie />,
-      title: 'Client-Centric',
-      description: 'Your success is our priority. We tailor our services to meet your specific business needs.'
-    }
+  const heroHighlights = [
+    { title: 'Transparent from day one', description: 'Fixed scopes, milestone-based billing, and proactive communication.' },
+    { title: 'Built for the UAE', description: 'Free zone and mainland specialists who remove the guesswork.' },
+    { title: 'Execution over paperwork', description: 'Licensing, visas, and banking handled by one squad that ships fast.' }
+  ]
+
+  const heroStats = [
+    { value: '1,200+', label: 'Company launches delivered' },
+    { value: '3-5 days', label: 'Average license timeline' },
+    { value: '4.9/5', label: 'Client satisfaction' }
+  ]
+
+  const principles = [
+    { icon: <FaBullseye />, title: 'Clarity first', description: 'We map the right jurisdiction, costs, and timelines before you commit.' },
+    { icon: <FaShieldAlt />, title: 'Compliance built-in', description: 'Regulatory, KYC, and banking requirements baked into every milestone.' },
+    { icon: <FaHandshake />, title: 'Partner-led guidance', description: 'Work directly with senior advisors who own outcomes, not tickets.' },
+    { icon: <FaRocket />, title: 'Momentum always', description: 'Fast cycles, weekly recaps, and decisions made with you, not for you.' }
   ]
 
   const missionVision = [
     {
       icon: <FaBullseye />,
       title: 'Our Mission',
-      description: 'Our mission is to empower entrepreneurs and businesses by providing streamlined company formation services, personalized guidance, and end-to-end support. We aim to eliminate complexities, reduce delays, and deliver value-driven solutions that allow our clients to start operating with confidence and ease.'
+      description: 'Empower entrepreneurs with a predictable, transparent path to UAE market entry backed by experts who execute.'
     },
     {
       icon: <FaEye />,
       title: 'Our Vision',
-      description: 'Our vision is to become the most trusted business setup partner in the UAE—recognized for our transparency, professionalism, and commitment to helping clients achieve their goals. We aspire to build long-lasting relationships and play a key role in shaping the success stories of businesses across industries.'
+      description: 'Be the most trusted launch partner in the region, known for clarity, speed, and world-class service long after incorporation.'
+    }
+  ]
+
+  const process = [
+    {
+      phase: '01',
+      title: 'Blueprint & fit',
+      detail: 'We align on business model, free zone or mainland fit, and compliance requirements within 48 hours.'
+    },
+    {
+      phase: '02',
+      title: 'Licensing & clearances',
+      detail: 'Applications, approvals, and banking dossiers handled in parallel with transparent progress updates.'
+    },
+    {
+      phase: '03',
+      title: 'Launch & sustain',
+      detail: 'Visas, corporate bank activation, and renewal playbooks so you operate from day one.'
     }
   ]
 
@@ -61,103 +93,117 @@ const About = () => {
     }
   ]
 
-  const whyChoose = [
-    { icon: <FaCheckCircle />, title: 'Company Formation', desc: 'Assisting in the establishment of businesses across various free zones in the UAE, ensuring compliance with all legal requirements' },
-    { icon: <FaGavel />, title: 'Licensing & Registration', desc: 'Managing the entire process of obtaining necessary licenses and registrations for your business operations' },
-    { icon: <FaRocket />, title: 'Visa Processing', desc: 'Facilitating visa applications for business owners, employees, and their families, ensuring a smooth relocation process' },
-    { icon: <FaChartLine />, title: 'Bank Account Assistance', desc: 'Guiding clients through the process of opening corporate bank accounts with reputable financial institutions in the UAE' }
+  const capabilities = [
+    { icon: <FaCheckCircle />, title: 'Company Formation', desc: 'Assisting in the establishment of businesses across various free zones in the UAE, ensuring compliance with all legal requirements.' },
+    { icon: <FaGavel />, title: 'Licensing & Registration', desc: 'Managing the entire process of obtaining necessary licenses and registrations for your business operations.' },
+    { icon: <FaRocket />, title: 'Visa Processing', desc: 'Facilitating visa applications for business owners, employees, and their families for a smooth relocation process.' },
+    { icon: <FaChartLine />, title: 'Bank Account Assistance', desc: 'Guiding clients through corporate bank account opening with reputable financial institutions in the UAE.' }
   ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  }
 
   return (
     <div className="about-page-modern">
-      <section className="page-hero-modern">
-        <div className="hero-background-modern">
-          <div className="hero-gradient-orb"></div>
-        </div>
+      <section className="about-hero">
+        <div className="about-hero-ink" />
+        <div className="about-hero-ink secondary" />
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="page-hero-content-modern"
-          >
-            <motion.span
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="hero-badge-modern"
-            >
-              About Us
-            </motion.span>
-            <h1 className="hero-title-modern">About Us</h1>
-            <p className="hero-subtitle-modern">At Easy Free Zone Setup, we specialize in helping entrepreneurs, startups, and established businesses seamlessly establish their presence in the UAE. Our expertise lies in simplifying the complex process of company formation, ensuring our clients can focus on growing their business while we handle the legal, administrative, and regulatory requirements. With a client-first approach, we provide tailored solutions that make setting up in the UAE free zones smooth, transparent, and hassle-free.</p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="section-modern">
-        <div className="container-modern">
-          <div className="about-content-modern">
+          <div className="about-hero-grid">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              className="about-hero-copy"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="about-text-modern"
             >
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="section-label-modern"
-              >
-                Our Story
-              </motion.span>
-              <h2 className="section-title-modern">Our Story</h2>
-              <div className="about-text-content">
-              <p>
-                Easy Free Zone Setup was founded with a clear purpose—to make UAE business setup simple, efficient, and accessible for everyone. We recognized that many aspiring entrepreneurs and businesses face challenges in navigating company formation procedures, so we built our consultancy on the principles of clarity, trust, and results. Today, we take pride in being a reliable partner for businesses who want to launch, grow, and succeed in the UAE.
+              <span className="hero-badge-modern">About Easy Free Zone Setup</span>
+              <h1 className="about-hero-title">We engineer frictionless UAE launches</h1>
+              <p className="about-hero-subtitle">
+                At Easy Free Zone Setup, we combine legal, banking, and visa expertise with a launch-first mindset. You get clarity,
+                velocity, and a team that owns the outcome with you.
               </p>
+
+              <div className="about-hero-pills">
+                {heroHighlights.map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    className="about-hero-pill"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 + 0.3 }}
+                  >
+                    <span className="pill-dot" />
+                    <div>
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="about-hero-actions">
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Talk to an expert <FaArrowRight />
+                </Link>
+                <Link to="/services" className="btn-ghost-modern">
+                  View our services
+                </Link>
+              </div>
+
+              <div className="about-hero-stats">
+                {heroStats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    className="about-hero-stat"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 + 0.5 }}
+                  >
+                    <span className="stat-value">{stat.value}</span>
+                    <span className="stat-label">{stat.label}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="about-visual-modern"
+              className="about-hero-panel"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="visual-card-modern">
-                <div className="card-glow-modern"></div>
-                <div className="card-content-modern">
-                  <div className="animated-grid-modern">
-                    {[...Array(9)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="grid-cell-modern"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
-                      />
-                    ))}
+              <div className="panel-header">
+                <div>
+                  <p className="panel-kicker">Launch control</p>
+                  <h3>Execution you can see</h3>
+                  <p className="panel-subtext">Clear milestones, accountable owners, and responsive support every step.</p>
+                </div>
+                <div className="panel-chip">
+                  <FaClock /> 24/7
+                </div>
+              </div>
+
+              <div className="panel-steps">
+                {process.map((step, index) => (
+                  <div className="panel-step" key={step.title}>
+                    <div className="panel-step-meta">
+                      <span className="panel-phase">{step.phase}</span>
+                      <FaCheckCircle />
+                    </div>
+                    <div>
+                      <h4>{step.title}</h4>
+                      <p>{step.detail}</p>
+                    </div>
                   </div>
+                ))}
+              </div>
+
+              <div className="panel-footer">
+                <div>
+                  <p className="panel-footer-title">Always-on communication</p>
+                  <p className="panel-footer-subtext">Live updates via WhatsApp, email, and dedicated advisor check-ins.</p>
+                </div>
+                <div className="panel-footer-accent">
+                  <span>Licenses</span>
+                  <span>Visas</span>
+                  <span>Banking</span>
                 </div>
               </div>
             </motion.div>
@@ -165,94 +211,103 @@ const About = () => {
         </div>
       </section>
 
-
-      {/* CORE VALUES & MISSION VISION */}
-      <section className="about-dark-section" style={{ background: '#000000', backgroundColor: '#000000' }}>
+      <section className="about-section">
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="section-header-dark"
-          >
-            <span className="section-label-dark">Core Values</span>
-            <h2 className="section-title-dark">Why Choose Us?</h2>
-          </motion.div>
-
-          <div className="values-list-modern">
-            {coreValues.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="value-item-modern"
-              >
-                <div className="value-icon-wrapper-dark">
-                  {value.icon}
-                </div>
-                <div className="value-content-dark">
-                  <h3 className="value-title-dark">{value.title}</h3>
-                  <p className="value-description-dark">{value.description}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="section-header-modern about-centered-header">
+            <span className="section-label-modern">What we stand for</span>
+            <h2 className="section-title-modern">Principles that keep you moving</h2>
+            <p className="section-description-modern">A modern, minimal canvas that keeps the blue-and-white theme while elevating clarity, structure, and energy.</p>
           </div>
 
-          <div className="mission-vision-list-modern">
-            {missionVision.map((item, index) => (
+          <div className="about-pillars-grid">
+            {principles.map((pillar, index) => (
               <motion.div
-                key={index}
+                key={pillar.title}
+                className="about-pillars-card"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="mission-vision-item-modern"
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -6 }}
               >
-                <div className="mission-vision-icon-dark">
-                  {item.icon}
-                </div>
-                <div className="mission-vision-content-dark">
-                  <h3 className="mission-vision-title-dark">{item.title}</h3>
-                  <p className="mission-vision-desc-dark">{item.description}</p>
-                </div>
+                <div className="pillar-icon">{pillar.icon}</div>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TEAM SECTION */}
-      <section className="about-team-section">
+      <section className="about-section mission-vision-section">
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="section-header-light"
-          >
-            <span className="section-label-light">Our Team</span>
-            <h2 className="section-title-light">Meet Our Expert Team</h2>
-            <p className="section-description-light">Dedicated professionals committed to your business success</p>
-          </motion.div>
+          <div className="mission-vision-grid">
+            {missionVision.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="mission-card"
+                initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.15 }}
+              >
+                <div className="mission-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="about-section process-section">
+        <div className="container-modern">
+          <div className="section-header-modern about-centered-header">
+            <span className="section-label-modern">How we work</span>
+            <h2 className="section-title-modern">Execution in three clear moves</h2>
+            <p className="section-description-modern">No noise—just a predictable sequence that keeps your UAE launch on time and on budget.</p>
+          </div>
+
+          <div className="process-grid">
+            {process.map((step, index) => (
+              <motion.div
+                key={step.title}
+                className="process-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.12 }}
+              >
+                <div className="process-phase">{step.phase}</div>
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+                <div className="process-accent" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="about-section">
+        <div className="container-modern">
+          <div className="section-header-modern about-centered-header">
+            <span className="section-label-modern">The people</span>
+            <h2 className="section-title-modern">Meet the team behind the launches</h2>
+            <p className="section-description-modern">Senior specialists who navigate regulations, banking, and marketing so you stay focused on growth.</p>
+          </div>
 
           <div className="team-grid-new">
             {teamMembers.map((member, index) => (
               <motion.div
-                key={index}
+                key={member.name}
                 className="team-item-new"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -6 }}
               >
-                <div className="team-avatar-new">
-                  {member.icon}
-                </div>
+                <div className="team-avatar-new">{member.icon}</div>
                 <h3 className="team-name-new">{member.name}</h3>
                 <p className="team-role-new">{member.role}</p>
                 <p className="team-description-new">{member.description}</p>
@@ -262,25 +317,18 @@ const About = () => {
         </div>
       </section>
 
-      {/* OUR SERVICES */}
-      <section className="about-services-section">
+      <section className="about-section capabilities-section">
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="section-header-modern"
-          >
-            <span className="section-label-modern">Our Services</span>
-            <h2 className="section-title-modern">Comprehensive Business Setup Solutions</h2>
-            <p className="section-description-modern">End-to-end services to ensure a seamless business setup experience</p>
-          </motion.div>
+          <div className="section-header-modern about-centered-header">
+            <span className="section-label-modern">What we deliver</span>
+            <h2 className="section-title-modern">Comprehensive business setup solutions</h2>
+            <p className="section-description-modern">End-to-end services designed to de-risk and accelerate your UAE expansion.</p>
+          </div>
 
           <div className="services-list-new">
-            {whyChoose.map((item, index) => (
+            {capabilities.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.title}
                 className="service-item-new"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -288,9 +336,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ x: 10 }}
               >
-                <div className="service-icon-new">
-                  {item.icon}
-                </div>
+                <div className="service-icon-new">{item.icon}</div>
                 <div className="service-content-new">
                   <h3 className="service-title-new">{item.title}</h3>
                   <p className="service-desc-new">{item.desc}</p>
@@ -301,8 +347,6 @@ const About = () => {
         </div>
       </section>
 
-
-      {/* CTA */}
       <section className="section-modern about-cta-section">
         <div className="container-modern">
           <motion.div
@@ -311,27 +355,24 @@ const About = () => {
             viewport={{ once: true }}
             className="about-cta-card"
           >
-            <h2 className="about-cta-title">Ready to Start Your UAE Business Journey?</h2>
-            <p className="about-cta-desc">Join thousands of successful entrepreneurs who chose Easy Free Zone Setup for their business formation needs. Let our expert team guide you through every step of the process.</p>
+            <h2 className="about-cta-title">Ready to start your UAE business journey?</h2>
+            <p className="about-cta-desc">
+              Join thousands of entrepreneurs who chose Easy Free Zone Setup for transparent, end-to-end company formation. We will guide
+              you through every milestone with clarity and speed.
+            </p>
             <div className="about-cta-buttons">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link to="/contact" className="btn btn-primary btn-large">
                   Get Free Consultation <FaArrowRight />
                 </Link>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link to="/services" className="btn btn-primary btn-large">
                   View Our Services <FaArrowRight />
                 </Link>
               </motion.div>
             </div>
-            <div className="about-cta-accent"></div>
+            <div className="about-cta-accent" />
           </motion.div>
         </div>
       </section>
@@ -340,4 +381,3 @@ const About = () => {
 }
 
 export default About
-

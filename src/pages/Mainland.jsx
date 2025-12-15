@@ -1,8 +1,20 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar, FaBuilding, FaShieldAlt, FaClock, FaGlobe, FaBriefcase, FaUsers, FaRocket, FaIdCard, FaHandshake, FaFileContract, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar, FaBuilding, FaShieldAlt, FaClock, FaGlobe, FaBriefcase, FaUsers, FaRocket, FaIdCard, FaHandshake, FaFileContract, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
 const Mainland = () => {
+  const heroHighlights = [
+    { icon: <FaGlobe />, label: 'Direct access to UAE market' },
+    { icon: <FaHandshake />, label: 'Government contract ready' },
+    { icon: <FaClock />, label: 'Fast-track licensing' }
+  ]
+
+  const heroStats = [
+    { value: '3-5 days', label: 'Average license timeline' },
+    { value: 'Full scope', label: 'Licensing • Visas • Banking' },
+    { value: 'One squad', label: 'Dedicated advisor + legal' }
+  ]
+
   const keyFeatures = [
     'Direct access to UAE domestic market',
     'Ability to bid for government contracts',
@@ -153,35 +165,91 @@ const Mainland = () => {
 
   return (
     <div className="freezone-page-modern">
-      <section className="freezone-hero-modern">
-        <div className="freezone-hero-background"></div>
+      <section className="setup-hero">
+        <div className="setup-hero-ink primary" />
+        <div className="setup-hero-ink secondary" />
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="freezone-hero-content"
-          >
-            <Link to="/" className="back-to-home-link">
-              <FaArrowLeft /> Back to Home
-            </Link>
-            <h1 className="freezone-hero-title">UAE Mainland Company Formation</h1>
-            <p className="freezone-hero-subtitle">
-              Establish your business in the UAE mainland with direct access to the domestic market, government contracts, and unlimited business opportunities.
-            </p>
-            <div className="freezone-hero-buttons">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-primary">
+          <div className="setup-hero-grid">
+            <motion.div
+              className="setup-hero-copy"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link to="/" className="back-to-home-link">
+                <FaArrowLeft /> Back to Home
+              </Link>
+              <span className="hero-badge-modern">Mainland</span>
+              <h1 className="setup-hero-title">UAE Mainland Company Formation</h1>
+              <p className="setup-hero-subtitle">
+                Build a domestic footprint, win government contracts, and unlock local credibility with a full-stack launch team.
+              </p>
+
+              <div className="setup-pill-grid">
+                {heroHighlights.map((item) => (
+                  <div className="setup-pill" key={item.label}>
+                    <span className="pill-icon">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="setup-hero-actions">
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
                   Get Started Now <FaArrowRight />
                 </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-secondary">
+                <Link to="/contact" className="btn-ghost-modern">
                   Schedule a Call
                 </Link>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+
+              <div className="setup-hero-stats">
+                {heroStats.map((stat) => (
+                  <div className="setup-hero-stat" key={stat.label}>
+                    <span className="stat-value">{stat.value}</span>
+                    <span className="stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="setup-hero-card"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9 }}
+            >
+              <div className="setup-card-header">
+                <div>
+                  <p className="setup-card-kicker">Local-ready package</p>
+                  <h3>Operate anywhere in the UAE</h3>
+                  <p className="setup-card-subtext">Licensing, local approvals, and sponsor arrangements orchestrated for you.</p>
+                </div>
+                <span className="setup-card-chip">
+                  <FaBriefcase /> Local-first
+                </span>
+              </div>
+              <ul className="setup-card-list">
+                {keyFeatures.slice(0, 3).map((item) => (
+                  <li key={item}>
+                    <FaCheckCircle /> {item}
+                  </li>
+                ))}
+                <li>
+                  <FaCheckCircle /> Dedicated compliance + banking concierge
+                </li>
+              </ul>
+              <div className="setup-card-footer">
+                <div>
+                  <p className="setup-card-footer-title">Tailored pricing & roadmap</p>
+                  <p className="setup-card-footer-subtext">We align on structure, visa count, and office footprint before you commit.</p>
+                </div>
+                <Link to="/contact" className="setup-card-link">
+                  Talk to an expert <FaArrowRight />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -298,7 +366,7 @@ const Mainland = () => {
                   ))}
                 </ul>
                 <Link to="/contact" className="btn btn-primary btn-small">
-                  Contact US
+                  Contact Us
                 </Link>
               </motion.div>
             ))}
@@ -399,29 +467,29 @@ const Mainland = () => {
         </div>
       </section>
 
-      <section className="freezone-cta-section">
+      <section className="cta-banner">
         <div className="container-modern">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="freezone-cta-content"
+            className="cta-banner-card"
           >
-            <h2 className="freezone-cta-title">Ready to Establish Your Mainland Business?</h2>
-            <p className="freezone-cta-description">
-              Our expert team is here to guide you through every step of the mainland company formation process. 
-              Contact us today to begin your UAE business journey with direct market access.
+            <span className="cta-kicker">Mainland experts</span>
+            <h2 className="cta-title">Ready to establish your mainland business?</h2>
+            <p className="cta-desc">
+              We orchestrate licensing, approvals, and banking so you can focus on winning customers and government contracts.
             </p>
-            <div className="freezone-cta-buttons">
+            <div className="cta-actions">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-primary">
-                  Get Started Today <FaArrowRight />
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Book a consultation <FaArrowRight />
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn btn-secondary">
-                  Contact Our Experts
-                </Link>
+                <a href="https://wa.me/971554182103" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
+                  <FaWhatsapp /> Chat on WhatsApp
+                </a>
               </motion.div>
             </div>
           </motion.div>
@@ -432,4 +500,3 @@ const Mainland = () => {
 }
 
 export default Mainland
-

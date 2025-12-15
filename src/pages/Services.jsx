@@ -1,8 +1,20 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaFileAlt, FaBuilding, FaIdCard, FaHandshake, FaGlobe, FaBriefcase, FaShieldAlt, FaCheckCircle, FaArrowRight, FaClock, FaDollarSign, FaHeadset, FaRocket, FaQuestionCircle } from 'react-icons/fa'
+import { FaFileAlt, FaBuilding, FaIdCard, FaHandshake, FaGlobe, FaBriefcase, FaShieldAlt, FaCheckCircle, FaArrowRight, FaClock, FaDollarSign, FaHeadset, FaRocket, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa'
 
 const Services = () => {
+  const heroHighlights = [
+    { icon: <FaCheckCircle />, label: 'Setup, visas, tax, banking' },
+    { icon: <FaClock />, label: 'Fast, transparent timelines' },
+    { icon: <FaShieldAlt />, label: 'Compliance built-in' }
+  ]
+
+  const heroStats = [
+    { value: '2000+', label: 'Launches delivered' },
+    { value: '24/7', label: 'Advisor support' },
+    { value: 'One team', label: 'Licensing • Visas • Banking' }
+  ]
+
   const services = [
     {
       icon: <FaFileAlt />,
@@ -83,28 +95,87 @@ const Services = () => {
 
   return (
     <div className="services-page-modern">
-      <section className="page-hero-modern">
-        <div className="hero-background-modern">
-          <div className="hero-gradient-orb"></div>
-        </div>
+      <section className="setup-hero">
+        <div className="setup-hero-ink primary" />
+        <div className="setup-hero-ink secondary" />
         <div className="container-modern">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="page-hero-content-modern"
-          >
-            <motion.span
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="hero-badge-modern"
+          <div className="setup-hero-grid">
+            <motion.div
+              className="setup-hero-copy"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              SERVICES
-            </motion.span>
-            <h1 className="hero-title-modern">Everything You Need Under One Roof</h1>
-            <p className="hero-subtitle-modern">Complete business setup solutions from registration to growth</p>
-          </motion.div>
+              <span className="hero-badge-modern">Services</span>
+              <h1 className="setup-hero-title">Everything you need under one roof</h1>
+              <p className="setup-hero-subtitle">Licensing, visas, tax, and banking guided by specialists who move quickly and keep you in the loop.</p>
+
+              <div className="setup-pill-grid">
+                {heroHighlights.map((item) => (
+                  <div className="setup-pill" key={item.label}>
+                    <span className="pill-icon">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="setup-hero-actions">
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Book a discovery call <FaArrowRight />
+                </Link>
+                <Link to="/calculator" className="btn-ghost-modern">
+                  Estimate my costs
+                </Link>
+              </div>
+
+              <div className="setup-hero-stats">
+                {heroStats.map((stat) => (
+                  <div className="setup-hero-stat" key={stat.label}>
+                    <span className="stat-value">{stat.value}</span>
+                    <span className="stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="setup-hero-card"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9 }}
+            >
+              <div className="setup-card-header">
+                <div>
+                  <p className="setup-card-kicker">Service bundle</p>
+                  <h3>From launch to compliance</h3>
+                  <p className="setup-card-subtext">Pick only what you need or run the full stack with one accountable team.</p>
+                </div>
+                <span className="setup-card-chip">
+                  <FaRocket /> Growth-ready
+                </span>
+              </div>
+              <ul className="setup-card-list">
+                <li>
+                  <FaCheckCircle /> Free zone & mainland company formation
+                </li>
+                <li>
+                  <FaCheckCircle /> Visa processing, banking, tax, and VAT
+                </li>
+                <li>
+                  <FaCheckCircle /> Always-on advisory and renewals
+                </li>
+              </ul>
+              <div className="setup-card-footer">
+                <div>
+                  <p className="setup-card-footer-title">Not sure where to start?</p>
+                  <p className="setup-card-footer-subtext">Share your business model—we’ll map the right jurisdiction and steps.</p>
+                </div>
+                <Link to="/contact" className="setup-card-link">
+                  Talk to an expert <FaArrowRight />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -213,12 +284,12 @@ const Services = () => {
 
           <div className="service-benefits-compact">
             {[
-              { icon: <FaClock />, title: 'Fast Processing', desc: '2-3 days setup time for most free zones' },
-              { icon: <FaCheckCircle />, title: '100% Compliance', desc: 'Full legal compliance guaranteed' },
-              { icon: <FaDollarSign />, title: 'Transparent Pricing', desc: 'No hidden fees, clear cost breakdown' },
-              { icon: <FaHeadset />, title: '24/7 Support', desc: 'Round-the-clock assistance available' },
-              { icon: <FaRocket />, title: 'Remote Setup', desc: 'Complete process without physical presence' },
-              { icon: <FaShieldAlt />, title: 'Expert Guidance', desc: 'Certified professionals at your service' }
+              { icon: <FaClock />, title: 'Fast Processing', desc: '2-3 day setup for most free zones with parallel workstreams' },
+              { icon: <FaCheckCircle />, title: 'Compliance Built-In', desc: 'Legal, KYC, and banking requirements baked into every milestone' },
+              { icon: <FaDollarSign />, title: 'Transparent Pricing', desc: 'No surprises—scopes, timelines, and costs agreed up front' },
+              { icon: <FaHeadset />, title: '24/7 Support', desc: 'Dedicated advisor with real-time updates across channels' },
+              { icon: <FaRocket />, title: 'Remote-Friendly', desc: 'Launch without travel; we coordinate everything on your behalf' },
+              { icon: <FaShieldAlt />, title: 'Senior Guidance', desc: 'Certified specialists who stay accountable beyond go-live' }
             ].map((benefit, index) => (
               <motion.div
                 key={index}
@@ -227,7 +298,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                whileHover={{ x: 5 }}
+                whileHover={{ y: -6 }}
               >
                 <div className="benefit-icon-compact">
                   {benefit.icon}
@@ -332,28 +403,29 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-modern services-cta-section">
+      <section className="cta-banner">
         <div className="container-modern">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="services-cta-card"
+            className="cta-banner-card"
           >
-            <div className="cta-icon-wrapper">
-              <FaRocket />
+            <span className="cta-kicker">Full-stack setup</span>
+            <h2 className="cta-title">Ready to get your UAE launch moving?</h2>
+            <p className="cta-desc">Book a consultation and we’ll map the right mix of licensing, visas, and banking for your business.</p>
+            <div className="cta-actions">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="btn-primary-modern btn-large-modern">
+                  Get Free Consultation <FaArrowRight />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <a href="https://wa.me/971554182103" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
+                  <FaWhatsapp /> Chat on WhatsApp
+                </a>
+              </motion.div>
             </div>
-            <h2 className="services-cta-title">Ready to Get Started?</h2>
-            <p className="services-cta-desc">Contact us today for a free consultation and let's discuss your business setup needs</p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/contact" className="btn btn-primary btn-large">
-                Get Free Consultation <FaArrowRight />
-              </Link>
-            </motion.div>
-            <div className="services-cta-accent"></div>
           </motion.div>
         </div>
       </section>
@@ -362,4 +434,3 @@ const Services = () => {
 }
 
 export default Services
-

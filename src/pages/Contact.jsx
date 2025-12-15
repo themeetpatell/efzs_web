@@ -5,8 +5,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: <FaEnvelope />, title: 'Email', content: 'admin@easyfreezonesetup.com', link: 'mailto:admin@easyfreezonesetup.com' },
-    { icon: <FaWhatsapp />, title: 'WhatsApp', content: '+971 55 418 2103', link: 'https://wa.me/971554182103' },
-    { icon: <FaMapMarkerAlt />, title: 'Address', content: 'Dubai, UAE', link: null }
+    { icon: <FaWhatsapp />, title: 'WhatsApp', content: '+971 55 418 2103', link: 'https://wa.me/971554182103' }
   ]
 
   const officeLocations = [
@@ -432,4 +431,3 @@ const Contact = () => {
 }
 
 export default Contact
-

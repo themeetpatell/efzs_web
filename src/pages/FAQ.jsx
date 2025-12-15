@@ -208,7 +208,7 @@ const FAQ = () => {
   }
 
   return (
-    <div className="faq-page-modern" style={{ background: '#000000', minHeight: '100vh' }}>
+    <div className="faq-page-modern">
       <section className="page-hero-modern">
         <div className="hero-background-modern">
           <div className="hero-gradient-orb"></div>
@@ -236,14 +236,14 @@ const FAQ = () => {
         </div>
       </section>
 
-      <section className="faq-section-modern" style={{ background: '#000000', backgroundColor: '#000000' }}>
+      <section className="faq-section-modern">
         <div className="container-modern">
           <div className="faq-filters-modern">
             {categories.map((category) => (
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`btn btn-filter ${selectedCategory === category ? 'active' : ''}`}
+                className={`btn btn-filter tab-chip ${selectedCategory === category ? 'active' : ''}`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -394,4 +394,3 @@ const FAQ = () => {
 }
 
 export default FAQ
-
