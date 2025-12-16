@@ -215,13 +215,13 @@ const Navigation = () => {
             href="https://wa.me/971554182103"
             target="_blank"
             rel="noopener noreferrer"
-            className="nav-cta-button-mobile"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Start Company in UAE
+          className="nav-cta-button-mobile"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+            Setup company
           </motion.a>
         </div>
 
@@ -237,7 +237,7 @@ const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Start Company in UAE
+          Setup company
         </motion.a>
 
         <motion.button
@@ -275,4 +275,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
