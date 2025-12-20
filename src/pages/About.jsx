@@ -12,7 +12,8 @@ import {
   FaUserCircle,
   FaHandshake,
   FaShieldAlt,
-  FaClock
+  FaClock,
+  FaBuilding
 } from 'react-icons/fa'
 
 const About = () => {
@@ -102,112 +103,97 @@ const About = () => {
 
   return (
     <div className="about-page-modern">
-      <section className="about-hero">
-        <div className="about-hero-ink" />
-        <div className="about-hero-ink secondary" />
+      <section className="about-hero-revamp">
         <div className="container-modern">
-          <div className="about-hero-grid">
+          <div className="hero-split-layout">
             <motion.div
-              className="about-hero-copy"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              className="hero-left-content"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="hero-badge-modern">About Easy Free Zone Setup</span>
-              <h1 className="about-hero-title">We engineer frictionless UAE launches</h1>
-              <p className="about-hero-subtitle">
-                At Easy Free Zone Setup, we combine legal, banking, and visa expertise with a launch-first mindset. You get clarity,
-                velocity, and a team that owns the outcome with you.
+              <motion.div
+                className="hero-badge-pill"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <span className="badge-dot"></span>
+                Who We Are
+              </motion.div>
+
+              <h1 className="hero-mega-title">
+                We Make UAE
+                <span className="title-highlight"> Business Setup</span>
+                <br />Simple & Fast
+              </h1>
+
+              <p className="hero-description">
+                Your end-to-end partner for company formation, licensing, visas, and banking in the UAE. We've helped hundreds of entrepreneurs turn their UAE business dreams into reality.
               </p>
 
-              <div className="about-hero-pills">
-                {heroHighlights.map((item, index) => (
+              <div className="hero-feature-list">
+                {[
+                  { icon: <FaCheckCircle />, text: 'Fast 3-day setup process' },
+                  { icon: <FaCheckCircle />, text: '100% transparent pricing' },
+                  { icon: <FaCheckCircle />, text: 'Expert guidance every step' }
+                ].map((item, idx) => (
                   <motion.div
-                    key={item.title}
-                    className="about-hero-pill"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
+                    key={idx}
+                    className="feature-item"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 + idx * 0.1 }}
                   >
-                    <span className="pill-dot" />
-                    <div>
-                      <h4>{item.title}</h4>
-                      <p>{item.description}</p>
-                    </div>
+                    {item.icon}
+                    <span>{item.text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="about-hero-actions">
-                <Link to="/contact" className="btn-primary-modern btn-large-modern">
-                  Talk to an expert <FaArrowRight />
-                </Link>
-                <Link to="/services" className="btn-ghost-modern">
-                  View our services
-                </Link>
-              </div>
-
-              <div className="about-hero-stats">
-                {heroStats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    className="about-hero-stat"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.5 }}
-                  >
-                    <span className="stat-value">{stat.value}</span>
-                    <span className="stat-label">{stat.label}</span>
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div
+                className="hero-cta-group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-hero-primary">
+                  Start Company in UAE <FaArrowRight />
+                </a>
+                <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn-hero-secondary">
+                  Book A Free Consultation
+                </a>
+              </motion.div>
             </motion.div>
 
             <motion.div
-              className="about-hero-panel"
-              initial={{ opacity: 0, x: 40 }}
+              className="hero-right-visual"
+              initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="panel-header">
-                <div>
-                  <p className="panel-kicker">Launch control</p>
-                  <h3>Execution you can see</h3>
-                  <p className="panel-subtext">Clear milestones, accountable owners, and responsive support every step.</p>
-                </div>
-                <div className="panel-chip">
-                  <FaClock /> 24/7
-                </div>
+              <div className="visual-card card-1">
+                <FaBuilding className="card-icon" />
+                <h3>100+</h3>
+                <p>Companies Launched</p>
               </div>
-
-              <div className="panel-steps">
-                {process.map((step, index) => (
-                  <div className="panel-step" key={step.title}>
-                    <div className="panel-step-meta">
-                      <span className="panel-phase">{step.phase}</span>
-                      <FaCheckCircle />
-                    </div>
-                    <div>
-                      <h4>{step.title}</h4>
-                      <p>{step.detail}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="visual-card card-2">
+                <FaHandshake className="card-icon" />
+                <h3>2-3 Days</h3>
+                <p>Average Setup Time</p>
               </div>
-
-              <div className="panel-footer">
-                <div>
-                  <p className="panel-footer-title">Always-on communication</p>
-                  <p className="panel-footer-subtext">Live updates via WhatsApp, email, and dedicated advisor check-ins.</p>
-                </div>
-                <div className="panel-footer-accent">
-                  <span>Licenses</span>
-                  <span>Visas</span>
-                  <span>Banking</span>
-                </div>
+              <div className="visual-card card-3">
+                <FaShieldAlt className="card-icon" />
+                <h3>100%</h3>
+                <p>Legal Compliance</p>
               </div>
             </motion.div>
           </div>
+        </div>
+        <div className="hero-bg-elements">
+          <div className="bg-circle circle-1"></div>
+          <div className="bg-circle circle-2"></div>
+          <div className="bg-grid"></div>
         </div>
       </section>
 

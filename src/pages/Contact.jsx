@@ -195,11 +195,11 @@ const Contact = () => {
               className="contact-form-wrapper-modern"
             >
               <div className="form-header-modern">
-                <h3 className="form-title-modern">Send Us a Message</h3>
+                <h3 className="form-title-modern">Get Your Business Registered in the UAE</h3>
                 <p className="form-subtitle-modern">Fill out the form below and we'll get back to you within 24 hours</p>
               </div>
               <form 
-                action='https://forms.zohopublic.com/easyfreezonesetupfzcllc1/form/Contactus/formperma/E4R2i-c9Bbpj2ZEuFD3OAjiZocNhTtfhJqzri2xf_ns/htmlRecords/submit' 
+                action='https://forms.zohopublic.com/easyfreezonesetupfzcllc1/form/GetYourBusinessRegisteredintheUAE/formperma/n_UtknoahEc1yv7sXqafkGzEzyk8e2QrZ222E0PxoBw/htmlRecords/submit' 
                 name='form' 
                 id='form' 
                 method='POST' 
@@ -229,19 +229,19 @@ const Contact = () => {
 
                 <div className="form-group-modern">
                   <label className="form-label-modern">
-                    Your Phone <em>*</em>
+                    Your WhatsApp Number <em>*</em>
                   </label>
                   <div className="phone-input-wrapper">
                     <div className="phone-code-group">
                       <label htmlFor="international_PhoneNumber_countrycodeval" className="phone-label-small">Code</label>
                       <input 
                         type="text" 
-                        compName="PhoneNumber_countrycodeval" 
+                        compname="PhoneNumber_countrycodeval" 
                         name="PhoneNumber_countrycodeval" 
                         phoneFormat="1" 
                         maxLength="10" 
                         id="international_PhoneNumber_countrycodeval" 
-                        placeholder=""
+                        placeholder="+971"
                         className="form-input-modern phone-code"
                       />
                     </div>
@@ -249,7 +249,7 @@ const Contact = () => {
                       <label htmlFor="international_PhoneNumber_countrycode" className="phone-label-small">Number</label>
                       <input 
                         type="text" 
-                        compName="PhoneNumber" 
+                        compname="PhoneNumber" 
                         name="PhoneNumber_countrycode" 
                         phoneFormat="1" 
                         isCountryCodeEnabled="true" 
@@ -257,7 +257,7 @@ const Contact = () => {
                         value="" 
                         fieldType="11" 
                         id="international_PhoneNumber_countrycode" 
-                        placeholder=""
+                        placeholder="55 123 4567"
                         className="form-input-modern phone-number"
                         required
                       />
@@ -266,7 +266,9 @@ const Contact = () => {
                 </div>
 
                 <div className="form-group-modern">
-                  <label htmlFor="Email" className="form-label-modern">Your Email</label>
+                  <label htmlFor="Email" className="form-label-modern">
+                    Your Email <em>*</em>
+                  </label>
                   <input 
                     type="email" 
                     maxLength="255" 
@@ -276,12 +278,13 @@ const Contact = () => {
                     fieldType="9" 
                     placeholder="i.e. email@yourdomain.com" 
                     className="form-input-modern"
+                    required
                   />
                 </div>
 
                 <div className="form-group-modern">
                   <label htmlFor="Dropdown" className="form-label-modern">
-                    Services interested in <em>*</em>
+                    Service interested in <em>*</em>
                   </label>
                   <select 
                     name="Dropdown" 
@@ -297,24 +300,9 @@ const Contact = () => {
                   </select>
                 </div>
 
-                <div className="form-group-modern">
-                  <label htmlFor="MultiLine" className="form-label-modern">
-                    Your Message <em>*</em>
-                  </label>
-                  <textarea 
-                    name="MultiLine" 
-                    id="MultiLine"
-                    maxLength="65535" 
-                    placeholder="Tell us about your requirements and we'll provide a customized solution..."
-                    className="form-input-modern form-textarea-modern"
-                    rows="6"
-                    required
-                  ></textarea>
-                </div>
-
                 <motion.button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary btn-form-submit"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -110,57 +110,59 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <motion.span
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="hero-badge-modern"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              🇦🇪 #1 Trusted UAE Business Setup Partner
-            </motion.span>
-            <h1 className="hero-title-modern">
-              Setup Your Business in UAE?<br />
-              <span>We Make It Simple & Fast</span>
-            </h1>
-            <p className="hero-subtitle-modern">
-              Get the best free zone options tailored to your business with 100% transparency
-            </p>
-            <p className="hero-desc-modern">
-              Professional UAE business setup services with guaranteed results and 100% legal compliance. Join thousands of successful entrepreneurs who chose us for their UAE business setup.
-            </p>
+              <h1 className="hero-title-modern">
+                Launch Your Business in the UAE — <span>Fast, Simple, 100% Legal</span>
+              </h1>
+            </motion.div>
             
-            <div className="hero-badges-modern">
-              {[
-                { icon: <FaCheck />, text: '100% Ownership' },
-                { icon: <FaClock />, text: 'Fast Licensing Process' },
-                { icon: <FaUsers />, text: 'Expert Business Advisors' },
-                { icon: <FaShieldAlt />, text: '100% Legal Compliance' },
-                { icon: <FaClock />, text: '2-3 Days Setup' },
-                { icon: <FaStar />, text: '50+ Success Stories' },
-                { icon: <FaHeadset />, text: '24/7 Expert Support' }
-              ].map((badge, index) => (
-                <motion.div
-                  key={index}
-                  className="badge-modern"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.05 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  {badge.icon}
-                  <span>{badge.text}</span>
-                </motion.div>
-              ))}
-            </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="hero-subtitle-modern"
+            >
+              From company formation to visas and banking — we handle everything so you can focus on growth
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="hero-stats-inline"
+            >
+              <div className="stat-badge">
+                <FaClock />
+                <span>2-3 Days Setup</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-badge">
+                <FaStar />
+                <span>100+ Companies</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-badge">
+                <FaShieldAlt />
+                <span>100% Legal</span>
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.5 }}
+              className="hero-cta-buttons"
             >
-              <Link to="/contact" className="btn btn-primary">
-                Get Started <FaArrowRight />
-              </Link>
+              <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
+                <FaArrowRight /> Start Company in UAE
+              </a>
+              <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-large">
+                Book Free Consultation
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -222,36 +224,42 @@ const Home = () => {
             <p className="section-description-modern">7 Emirates • 7+ freezones • Unlimited Opportunities</p>
           </motion.div>
 
-          <div className="emirates-grid-modern">
-            {emirates.map((emirate, index) => (
-              <motion.div 
-                key={index}
-                className="emirate-card-modern"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-              >
-                <h3 className="emirate-name-modern">{emirate.name}</h3>
-                <div className="emirate-highlights-modern">
-                  <span className="emirate-label-modern">Key Highlights</span>
-                  <div className="zones-tags-modern">
-                    {emirate.zones.map((zone, i) => (
-                      <motion.span
-                        key={i}
-                        className="zone-tag-modern"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        {zone}
-                      </motion.span>
-                    ))}
+          <div className="emirates-slider-wrapper">
+            <motion.div 
+              className="emirates-grid-modern"
+              animate={{ x: ['0%', '-100%'] }}
+              transition={{
+                x: {
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear"
+                }
+              }}
+            >
+              {[...emirates, ...emirates].map((emirate, index) => (
+                <div 
+                  key={index}
+                  className="emirate-card-modern"
+                >
+                  <h3 className="emirate-name-modern">{emirate.name}</h3>
+                  <div className="emirate-highlights-modern">
+                    <span className="emirate-label-modern">Key Highlights</span>
+                    <div className="zones-tags-modern">
+                      {emirate.zones.map((zone, i) => (
+                        <span
+                          key={i}
+                          className="zone-tag-modern"
+                        >
+                          {zone}
+                        </span>
+                      ))}
+                    </div>
                   </div>
+                  <p className="emirate-desc-modern">{emirate.description}</p>
+                  <div className="emirate-accent-modern"></div>
                 </div>
-                <p className="emirate-desc-modern">{emirate.description}</p>
-                <div className="emirate-accent-modern"></div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -550,22 +558,22 @@ const Home = () => {
       <section className="cta-section-modern">
         <div className="container-modern">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="cta-content-modern"
           >
-            <h2 className="cta-title-modern">Ready to Setup Your Business in UAE?</h2>
-            <p className="cta-desc-modern">Get free consultation from our experts. No hidden fees, 100% transparency.</p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/contact" className="btn btn-primary btn-large">
-                Get Started <FaArrowRight />
-              </Link>
-            </motion.div>
+            <h2 className="cta-title-modern">Start Your UAE Business Today</h2>
+            <p className="cta-desc-modern">Free consultation • Fast setup • 100% transparency</p>
+            <div className="cta-buttons-group">
+              <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
+                <FaArrowRight /> Get Started Now
+              </a>
+              <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-large">
+                Book Consultation
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

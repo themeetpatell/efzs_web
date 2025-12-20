@@ -5149,7 +5149,7 @@ section.about-dark-section * {
 
 .cta-actions {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
@@ -5253,12 +5253,24 @@ section.about-dark-section * {
   .freelance-cta-buttons-blue {
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
+    gap: 16px;
   }
 
   .freelance-cta-buttons-blue .btn {
     width: 100%;
     min-width: auto;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .cta-actions .btn-primary-modern,
+  .cta-actions .btn-ghost-modern {
+    width: 100%;
+    justify-content: center;
   }
 }
 

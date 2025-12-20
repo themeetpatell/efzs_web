@@ -136,11 +136,11 @@ const FreelanceVisa = () => {
               </div>
 
               <div className="setup-hero-actions">
-                <Link to="/contact" className="btn-primary-modern btn-large-modern">
-                  Get Free Consultation <FaArrowRight />
-                </Link>
-                <a href="https://wa.me/971554182103" className="btn-ghost-modern">
-                  Chat on WhatsApp
+                <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-primary-modern btn-large-modern">
+                  Start Company in UAE <FaArrowRight />
+                </a>
+                <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
+                  Book A Free Consultation
                 </a>
               </div>
 
@@ -452,18 +452,13 @@ const FreelanceVisa = () => {
             </p>
             <div className="cta-actions">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn-primary-modern btn-large-modern">
-                  Get Free Consultation <FaArrowRight />
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a href="https://wa.me/971554182103" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
-                  <FaWhatsapp /> Chat on WhatsApp
+                <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-primary-modern btn-large-modern">
+                  Start Company in UAE <FaArrowRight />
                 </a>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a href="tel:+971554182103" className="btn-ghost-modern">
-                  <FaPhone /> Call +971 55 418 2103
+                <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
+                  Book A Free Consultation
                 </a>
               </motion.div>
             </div>
