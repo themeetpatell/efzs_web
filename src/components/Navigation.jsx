@@ -221,7 +221,7 @@ const Navigation = () => {
           transition={{ delay: 0.5 }}
           onClick={() => setIsMobileMenuOpen(false)}
         >
-            Setup company
+            Setup My Company
           </motion.a>
         </div>
 
@@ -237,7 +237,7 @@ const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Setup company
+          Setup My Company
         </motion.a>
 
         <motion.button

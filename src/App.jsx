@@ -14,6 +14,7 @@ import FreelanceVisa from './pages/FreelanceVisa'
 import FreeZone from './pages/FreeZone'
 import Mainland from './pages/Mainland'
 import CostCalculator from './pages/CostCalculator'
+import LatinAmericaCalculator from './pages/LatinAmericaCalculator'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/freezone" element={<FreeZone />} />
             <Route path="/mainland" element={<Mainland />} />
             <Route path="/calculator" element={<CostCalculator />} />
+            <Route path="/calculator-latin-america" element={<LatinAmericaCalculator />} />
           </Routes>
         </AnimatePresence>
         <Footer />

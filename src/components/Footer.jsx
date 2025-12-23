@@ -214,6 +214,20 @@ const Footer = () => {
                   </motion.div>
                 </li>
               ))}
+              <li>
+                <motion.div whileHover={{ x: 5 }}>
+                  <Link to="/calculator" className="footer-link-modern">
+                    UAE Cost Calculator
+                  </Link>
+                </motion.div>
+              </li>
+              <li>
+                <motion.div whileHover={{ x: 5 }}>
+                  <Link to="/calculator-latin-america" className="footer-link-modern">
+                    Latin America Calculator
+                  </Link>
+                </motion.div>
+              </li>
             </ul>
           </motion.div>
 

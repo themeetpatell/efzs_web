@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FaWhatsapp, FaPhone, FaArrowRight } from 'react-icons/fa'
 
 const FloatingButtons = () => {
@@ -44,21 +45,15 @@ const FloatingButtons = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        <a
-          href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="sticky-cta-btn"
-        >
+        <Link to="/calculator" className="sticky-cta-btn">
           <span>Start Company in Dubai</span>
           <FaArrowRight />
-        </a>
+        </Link>
       </motion.div>
     </>
   )
 }
 
 export default FloatingButtons
-
 
 

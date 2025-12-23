@@ -2537,6 +2537,19 @@ section {
   font-weight: 500;
 }
 
+.top-disclaimer {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--gray-800);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
 .disclaimer-icon {
   font-size: 20px;
   flex-shrink: 0;
@@ -2807,6 +2820,12 @@ section {
 .calculator-section-modern .calculator-sidebar {
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-error {
+  margin-top: 6px;
+  color: #d8000c;
+  font-size: 12px;
 }
 
 /* ========================================
