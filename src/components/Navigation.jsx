@@ -10,7 +10,6 @@ const Navigation = () => {
   const [openDropdown, setOpenDropdown] = useState(null)
   const location = useLocation()
   const servicesDropdownRef = useRef(null)
-  const resourcesDropdownRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,8 +22,7 @@ const Navigation = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target) &&
-        resourcesDropdownRef.current && !resourcesDropdownRef.current.contains(event.target)
+        servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)
       ) {
         setOpenDropdown(null)
       }
@@ -40,12 +38,6 @@ const Navigation = () => {
     { path: '/services/freelance-visa', label: 'Freelance Visa' },
   ]
 
-  const resourcesItems = [
-    { path: '/resources', label: 'Blog' },
-    { path: '/guides', label: 'Guides' },
-    { path: '/faq', label: 'FAQs' },
-  ]
-
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
@@ -56,7 +48,7 @@ const Navigation = () => {
   }
 
   const isServicesActive = servicesItems.some(item => location.pathname === item.path)
-  const isResourcesActive = resourcesItems.some(item => location.pathname === item.path) || location.pathname === '/guides'
+  const isResourcesActive = false
 
   return (
     <motion.nav
@@ -127,50 +119,6 @@ const Navigation = () => {
                   className="nav-dropdown-menu"
                 >
                   {servicesItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`nav-dropdown-item ${location.pathname === item.path ? 'active' : ''}`}
-                      onClick={() => {
-                        setIsMobileMenuOpen(false)
-                        setOpenDropdown(null)
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Resources Dropdown */}
-          <div className="nav-dropdown-wrapper" ref={resourcesDropdownRef}>
-            <motion.button
-              className={`nav-link-modern nav-dropdown-trigger ${isResourcesActive ? 'active' : ''}`}
-              onClick={() => toggleDropdown('resources')}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              <span className="nav-link-text">Resources</span>
-              <motion.div
-                animate={{ rotate: openDropdown === 'resources' ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <FaChevronDown size={12} />
-              </motion.div>
-            </motion.button>
-            <AnimatePresence>
-              {openDropdown === 'resources' && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="nav-dropdown-menu"
-                >
-                  {resourcesItems.map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}

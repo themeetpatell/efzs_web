@@ -19,13 +19,6 @@ const Footer = () => {
     'Bookkeeping Services'
   ]
 
-  const resources = [
-    'Business Setup Guide',
-    'Visa Application Guide',
-    'Tax Compliance Guide',
-    'Free Zone Comparison'
-  ]
-
   return (
     <footer className="footer-modern">
       <div className="footer-top-accent"></div>
@@ -141,20 +134,6 @@ const Footer = () => {
               </li>
               <li>
                 <motion.div whileHover={{ x: 5 }}>
-                  <Link to="/resources" className="footer-link-modern">
-                    Resources
-                  </Link>
-                </motion.div>
-              </li>
-              <li>
-                <motion.div whileHover={{ x: 5 }}>
-                  <Link to="/faq" className="footer-link-modern">
-                    FAQ
-                  </Link>
-                </motion.div>
-              </li>
-              <li>
-                <motion.div whileHover={{ x: 5 }}>
                   <Link to="/contact" className="footer-link-modern">
                     Contact
                   </Link>
@@ -192,42 +171,6 @@ const Footer = () => {
                   </li>
                 )
               })}
-            </ul>
-          </motion.div>
-
-          {/* Resources */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="footer-section-modern"
-          >
-            <h4 className="footer-heading">Resources</h4>
-            <ul className="footer-links-modern">
-              {resources.map((resource, index) => (
-                <li key={index}>
-                  <motion.div whileHover={{ x: 5 }}>
-                    <Link to="/resources" className="footer-link-modern">
-                      {resource}
-                    </Link>
-                  </motion.div>
-                </li>
-              ))}
-              <li>
-                <motion.div whileHover={{ x: 5 }}>
-                  <Link to="/calculator" className="footer-link-modern">
-                    UAE Cost Calculator
-                  </Link>
-                </motion.div>
-              </li>
-              <li>
-                <motion.div whileHover={{ x: 5 }}>
-                  <Link to="/calculator-latin-america" className="footer-link-modern">
-                    Latin America Calculator
-                  </Link>
-                </motion.div>
-              </li>
             </ul>
           </motion.div>
 
@@ -336,4 +279,3 @@ const Footer = () => {
 }
 
 export default Footer
-
