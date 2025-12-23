@@ -93,14 +93,14 @@ const FreeZone = () => {
   ]
 
   const freeZones = [
-    { name: 'Meydan Free Zone', price: '12,500', logo: 'Meydan' },
-    { name: 'IFZA Free Zone', price: '12,900', logo: 'IFZA' },
-    { name: 'Sharjah Publishing City (SPC)', price: '5,750', logo: 'SPC' },
-    { name: 'Masdar City Free Zone', price: '7,000', logo: 'Masdar' },
-    { name: 'Ajman Free Zone', price: '5,555', logo: 'Ajman' },
-    { name: 'RAKEZ Free Zone', price: '6,010', logo: 'RAKEZ' },
-    { name: 'UAQ Free Zone', price: '5,500', logo: 'UAQ' },
-    { name: 'Creative City Free Zone', price: '5,530', logo: 'Creative' }
+    { name: 'Meydan Free Zone', price: '12,500', code: 'Meydan', logo: '/meydan.png' },
+    { name: 'IFZA Free Zone', price: '12,900', code: 'IFZA', logo: '/IFZA.png' },
+    { name: 'Sharjah Publishing City (SPC)', price: '5,750', code: 'SPC', logo: '/SPC.png' },
+    { name: 'Masdar City Free Zone', price: '7,000', code: 'Masdar', logo: '/Masdar City.png' },
+    { name: 'Ajman Free Zone', price: '5,555', code: 'Ajman', logo: '/Ajman.png' },
+    { name: 'RAKEZ Free Zone', price: '6,010', code: 'RAKEZ', logo: '/RAKEZ.png' },
+    { name: 'UAQ Free Zone', price: '5,500', code: 'UAQ', logo: '/UAQ.png' },
+    { name: 'Creative City Free Zone', price: '5,530', code: 'Creative', logo: '/Creative city.png' }
   ]
 
   const costComparison = [
@@ -436,7 +436,11 @@ const FreeZone = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="freezone-logo-placeholder">
-                  {zone.logo}
+                  {zone.logo ? (
+                    <img src={zone.logo} alt={`${zone.name} logo`} className="freezone-logo-img" loading="lazy" />
+                  ) : (
+                    <span className="freezone-logo-text">{zone.code || zone.name}</span>
+                  )}
                 </div>
                 <h3 className="freezone-location-name">{zone.name}</h3>
                 <p className="freezone-location-price">Starting from AED {zone.price}</p>

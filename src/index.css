@@ -1092,14 +1092,18 @@ button {
 }
 
 .freezone-card-modern {
-  padding: 32px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-sm);
-  border-radius: 20px;
+  padding: 28px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  border: 1px solid rgba(17, 52, 117, 0.08);
+  box-shadow: 0 12px 40px rgba(17, 52, 117, 0.12);
+  border-radius: 22px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
 }
 
 .freezone-card-modern::before {
@@ -1108,10 +1112,10 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
   background: var(--gradient-blue);
   transform: scaleX(0);
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
 .freezone-card-modern:hover::before {
@@ -1119,22 +1123,25 @@ button {
 }
 
 .freezone-card-modern:hover {
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-lg);
+  border-color: rgba(27, 118, 240, 0.2);
+  box-shadow: 0 16px 50px rgba(27, 118, 240, 0.22);
 }
 
 .zone-name-modern {
   font-size: 22px;
   font-weight: 700;
   color: var(--text-strong);
-  margin-bottom: 20px;
+  margin: 2px 0 8px 0;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .zone-price-modern {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 24px;
+  margin: 4px 0 12px 0;
+  align-items: center;
 }
 
 .zone-price-label {
@@ -1145,9 +1152,9 @@ button {
 }
 
 .zone-price-amount {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
-  color: var(--blue-electric);
+  color: #1b76f0;
 }
 
 .zone-btn-modern {

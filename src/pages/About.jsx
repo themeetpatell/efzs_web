@@ -72,25 +72,29 @@ const About = () => {
       name: 'Mohamed Ramshadali',
       role: 'Co-founder, Managing Director',
       description: 'Leading our company with extensive expertise in UAE business formation and strategic business development.',
-      icon: <FaUserTie />
+      icon: <FaUserTie />,
+      photo: '/ramshad.jpg'
     },
     {
       name: 'Seba Nageeb',
       role: 'Legal Consultant',
       description: 'Expert legal consultant specializing in UAE business law and regulatory compliance with comprehensive knowledge of Free Zone regulations.',
-      icon: <FaUserCircle />
+      icon: <FaUserCircle />,
+      photo: '/seba.jpg'
     },
     {
       name: 'Deepanshu Mendiratta',
       role: 'Business Setup Advisor',
       description: 'Expert business advisor specializing in UAE company formation and Free Zone regulations.',
-      icon: <FaUserTie />
+      icon: <FaUserTie />,
+      photo: '/deepanshu.jpg'
     },
     {
       name: 'Fathimath Minha',
       role: 'Head of Marketing',
       description: 'Leading our marketing initiatives and client communication strategies to ensure exceptional service delivery.',
-      icon: <FaUserCircle />
+      icon: <FaUserCircle />,
+      photo: '/minha.jpg'
     }
   ]
 
@@ -290,15 +294,21 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -6 }}
-              >
-                <div className="team-avatar-new">{member.icon}</div>
-                <h3 className="team-name-new">{member.name}</h3>
-                <p className="team-role-new">{member.role}</p>
-                <p className="team-description-new">{member.description}</p>
-              </motion.div>
-            ))}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -6 }}
+            >
+              <div className="team-avatar-new">
+                {member.photo ? (
+                  <img src={member.photo} alt={member.name} className="team-avatar-img" loading="lazy" />
+                ) : (
+                  member.icon
+                )}
+              </div>
+              <h3 className="team-name-new">{member.name}</h3>
+              <p className="team-role-new">{member.role}</p>
+              <p className="team-description-new">{member.description}</p>
+            </motion.div>
+          ))}
           </div>
         </div>
       </section>

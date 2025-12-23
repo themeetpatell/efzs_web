@@ -78,7 +78,7 @@ const LatinAmericaCalculator = () => {
     return {
       packageCost,
       serviceFee,
-      total: Math.round(packageCost + serviceFee)
+      total: Number((packageCost + serviceFee).toFixed(2))
     }
   }
 
@@ -121,7 +121,7 @@ const LatinAmericaCalculator = () => {
     const selectedJurisdiction = getSelectedJurisdiction()
     const visaCount = parseInt(formData.visas, 10) || 0
     const packageCost = selectedJurisdiction?.costs?.[visaCount] || 0
-    const subjectText = `Quote for setting up business in ${selectedJurisdiction?.name || 'your chosen free zone'}`
+    const subjectText = `Cotización para constituir empresa en ${selectedJurisdiction?.name || 'su zona franca seleccionada'}`
 
     const doc = new jsPDF()
     const pageWidth = doc.internal.pageSize.getWidth()
@@ -193,7 +193,7 @@ const LatinAmericaCalculator = () => {
     doc.setFontSize(24)
     doc.setFont('helvetica', 'bold')
     doc.setTextColor(primaryColor.r, primaryColor.g, primaryColor.b)
-    doc.text('QUOTE', pageWidth - 20, 30, { align: 'right' })
+    doc.text('COTIZACIÓN', pageWidth - 20, 30, { align: 'right' })
 
     // start content lower to clear underline and avoid overlap with meta card
     yPos = headerHeight + 32
@@ -224,7 +224,7 @@ const LatinAmericaCalculator = () => {
     yPos = headerHeight + 32
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(12)
-    doc.text('Facturar A', 20, yPos)
+    doc.text('Cliente', 20, yPos)
     yPos += 6
     doc.setFont('helvetica', 'normal')
     doc.setFontSize(10)
@@ -290,18 +290,24 @@ const LatinAmericaCalculator = () => {
     doc.setFont('helvetica', 'normal')
     doc.setFontSize(9)
 
+    const formatAmount = (value) =>
+      Number(value || 0).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })
+
     const items = [
       {
         name: `${selectedJurisdiction?.name || 'Zona Franca'} paquete (${visaCount} visa${visaCount !== 1 ? 's' : ''})`,
         qty: 1,
-        rate: Math.round(packageCost),
-        amount: Math.round(packageCost)
+        rate: Number(packageCost),
+        amount: Number(packageCost)
       },
       {
         name: 'Tarifa de Servicio',
         qty: 1,
-        rate: serviceFee,
-        amount: serviceFee
+        rate: Number(serviceFee),
+        amount: Number(serviceFee)
       }
     ]
 
@@ -319,8 +325,8 @@ const LatinAmericaCalculator = () => {
       doc.text((index + 1).toString(), colX[0], rowY)
       doc.text(item.name, colX[1], rowY)
       doc.text(item.qty.toFixed(2), colX[2], rowY, { align: 'right' })
-      doc.text(item.rate.toLocaleString(), colX[3], rowY, { align: 'right' })
-      doc.text(item.amount.toLocaleString(), colX[4], rowY, { align: 'right' })
+      doc.text(formatAmount(item.rate), colX[3], rowY, { align: 'right' })
+      doc.text(formatAmount(item.amount), colX[4], rowY, { align: 'right' })
       doc.line(leftMargin, yPos + rowHeight - 2, rightMargin, yPos + rowHeight - 2)
       yPos += rowHeight
     })
@@ -349,7 +355,7 @@ const LatinAmericaCalculator = () => {
     doc.setFontSize(10)
     doc.setTextColor(0, 0, 0)
     doc.text('Subtotal', colX[3], yPos + 10, { align: 'right' })
-    doc.text(subtotal.toLocaleString(), colX[4], yPos + 10, { align: 'right' })
+    doc.text(formatAmount(subtotal), colX[4], yPos + 10, { align: 'right' })
     yPos += subBoxH + 8
 
     yPos += 10
@@ -363,7 +369,7 @@ const LatinAmericaCalculator = () => {
     doc.setFontSize(12)
     doc.setFont('helvetica', 'bold')
     doc.text('Total', colX[3], yPos + 11, { align: 'right' })
-    doc.text(`USD ${subtotal.toLocaleString()}`, colX[4], yPos + 11, { align: 'right' })
+    doc.text(`USD ${formatAmount(subtotal)}`, colX[4], yPos + 11, { align: 'right' })
 
     yPos += 24
     doc.setTextColor(primaryColor.r, primaryColor.g, primaryColor.b)

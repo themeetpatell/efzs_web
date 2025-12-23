@@ -7,14 +7,14 @@ import CostCalculator from './CostCalculator'
 const Home = () => {
   // Actual Free Zone pricing from reference
   const freeZones = [
-    { name: 'Meydan Free Zone', price: '12,500', location: 'Dubai' },
-    { name: 'IFZA Free Zone', price: '12,900', location: 'Dubai' },
-    { name: 'Sharjah Publishing City (SPC)', price: '5,750', location: 'Sharjah' },
-    { name: 'Masdar City Free Zone', price: '7,000', location: 'Abu Dhabi' },
-    { name: 'Ajman Free Zone', price: '5,555', location: 'Ajman' },
-    { name: 'RAKEZ Free Zone', price: '6,010', location: 'Ras Al Khaimah' },
-    { name: 'UAQ Free Zone', price: '5,500', location: 'Umm Al Quwain' },
-    { name: 'Creative City Free Zone', price: '5,530', location: 'Fujairah' },
+    { name: 'Meydan Free Zone', price: '12,500', location: 'Dubai', code: 'Meydan', logo: '/meydan.png' },
+    { name: 'IFZA Free Zone', price: '12,900', location: 'Dubai', code: 'IFZA', logo: '/IFZA.png' },
+    { name: 'Sharjah Publishing City (SPC)', price: '5,750', location: 'Sharjah', code: 'SPC', logo: '/SPC.png' },
+    { name: 'Masdar City Free Zone', price: '7,000', location: 'Abu Dhabi', code: 'Masdar', logo: '/Masdar City.png' },
+    { name: 'Ajman Free Zone', price: '5,555', location: 'Ajman', code: 'Ajman', logo: '/Ajman.png' },
+    { name: 'RAKEZ Free Zone', price: '6,010', location: 'Ras Al Khaimah', code: 'RAKEZ', logo: '/RAKEZ.png' },
+    { name: 'UAQ Free Zone', price: '5,500', location: 'Umm Al Quwain', code: 'UAQ', logo: '/UAQ.png' },
+    { name: 'Creative City Free Zone', price: '5,530', location: 'Fujairah', code: 'Creative', logo: '/Creative city.png' },
   ]
 
   const emirates = [
@@ -194,6 +194,18 @@ const Home = () => {
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
+                <div className="zone-logo-wrapper">
+                  {zone.logo ? (
+                    <img
+                      src={zone.logo}
+                      alt={`${zone.name} logo`}
+                      className="zone-logo-img"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="zone-logo-fallback">{zone.code || zone.name}</div>
+                  )}
+                </div>
                 <h3 className="zone-name-modern">{zone.name}</h3>
                 <div className="zone-price-modern">
                   <span className="zone-price-label">Starting from</span>
