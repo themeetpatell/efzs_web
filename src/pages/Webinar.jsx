@@ -198,7 +198,7 @@ const Webinar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Looking to move to Dubai to set up your business here by March 2025? Then this webinar is a must-attend for you.
+                Looking to move to Dubai to set up your business here by March 2026? Then this webinar is a must-attend for you.
               </motion.p>
 
               <motion.div
@@ -209,7 +209,7 @@ const Webinar = () => {
               >
                 <div className="webinar-detail-item">
                   <FaCalendarAlt />
-                  <span>January 29, 2025</span>
+                  <span>January 29, 2026</span>
                 </div>
                 <div className="webinar-detail-item">
                   <FaClock />
