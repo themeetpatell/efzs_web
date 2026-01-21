@@ -157,7 +157,7 @@ const Home = () => {
             transition={{ delay: 0.5 }}
             className="hero-cta-buttons"
           >
-            <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
+            <a href="https://wa.me/971551690373?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
                 <FaArrowRight /> Setup My Company
               </a>
               <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-large">
@@ -579,7 +579,7 @@ const Home = () => {
             <h2 className="cta-title-modern">Start Your UAE Business Today</h2>
             <p className="cta-desc-modern">Free consultation • Fast setup • 100% transparency</p>
             <div className="cta-buttons-group">
-              <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
+              <a href="https://wa.me/971551690373?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
                 <FaArrowRight /> Setup My Company
               </a>
               <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-large">

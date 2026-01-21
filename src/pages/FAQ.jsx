@@ -366,7 +366,7 @@ const FAQ = () => {
             </p>
             <div className="faq-support-buttons">
               <motion.a
-                href="https://wa.me/971554182103"
+                href="https://wa.me/971551690373"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
@@ -377,13 +377,13 @@ const FAQ = () => {
                 Live Chat Support
               </motion.a>
               <motion.a
-                href="tel:+971554182103"
+                href="tel:+971551690373"
                 className="btn btn-secondary"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <FaPhone />
-                Call +971 55 418 2103
+                Call +971 55 169 0373
               </motion.a>
             </div>
           </motion.div>

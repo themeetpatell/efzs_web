@@ -160,7 +160,7 @@ const Navigation = () => {
 
           {/* Mobile CTA Button */}
           <motion.a
-            href="https://wa.me/971554182103"
+            href="https://wa.me/971551690373"
             target="_blank"
             rel="noopener noreferrer"
           className="nav-cta-button-mobile"
@@ -169,13 +169,13 @@ const Navigation = () => {
           transition={{ delay: 0.5 }}
           onClick={() => setIsMobileMenuOpen(false)}
         >
-            Setup My Company
+            Setup My Business
           </motion.a>
         </div>
 
         {/* CTA Button */}
         <motion.a
-          href="https://wa.me/971554182103"
+          href="https://wa.me/971551690373"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-cta-button"
@@ -185,7 +185,7 @@ const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Setup My Company
+          Setup My Business
         </motion.a>
 
         <motion.button

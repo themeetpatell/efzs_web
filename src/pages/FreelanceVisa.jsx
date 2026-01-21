@@ -136,7 +136,7 @@ const FreelanceVisa = () => {
               </div>
 
               <div className="setup-hero-actions">
-                <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-primary-modern btn-large-modern">
+                <a href="https://wa.me/971551690373?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-primary-modern btn-large-modern">
                   Start Company in UAE <FaArrowRight />
                 </a>
                 <a href="https://admin-easyfreezonesetup.zohobookings.com/#/Startcompanyintheuae" target="_blank" rel="noopener noreferrer" className="btn-ghost-modern">
@@ -452,7 +452,7 @@ const FreelanceVisa = () => {
             </p>
             <div className="cta-actions">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a href="https://wa.me/971554182103?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-primary-modern btn-large-modern">
+                <a href="https://wa.me/971551690373?text=Hi%2C%20I%20want%20to%20start%20a%20company%20in%20UAE" target="_blank" rel="noopener noreferrer" className="btn-primary-modern btn-large-modern">
                   Start Company in UAE <FaArrowRight />
                 </a>
               </motion.div>

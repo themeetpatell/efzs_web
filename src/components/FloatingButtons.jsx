@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { FaWhatsapp, FaPhone, FaArrowRight } from 'react-icons/fa'
 
 const FloatingButtons = () => {
-  const whatsappNumber = '971554182103'
-  const phoneNumber = '+971554182103'
+  const whatsappNumber = '971551690373'
+  const phoneNumber = '+971551690373'
   const whatsappMessage = encodeURIComponent('Hello! I would like to know more about your services.')
 
   return (
@@ -55,5 +55,3 @@ const FloatingButtons = () => {
 }
 
 export default FloatingButtons
-
-

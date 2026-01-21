@@ -5,7 +5,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: <FaEnvelope />, title: 'Email', content: 'admin@easyfreezonesetup.com', link: 'mailto:admin@easyfreezonesetup.com' },
-    { icon: <FaWhatsapp />, title: 'WhatsApp', content: '+971 55 418 2103', link: 'https://wa.me/971554182103' }
+    { icon: <FaWhatsapp />, title: 'WhatsApp', content: '+971 55 169 0373', link: 'https://wa.me/971551690373' }
   ]
 
   const officeLocations = [
@@ -174,7 +174,7 @@ const Contact = () => {
                     <FaFacebook />
                   </motion.a>
                   <motion.a
-                    href="https://wa.me/971554182103"
+                    href="https://wa.me/971551690373"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-icon-modern"
