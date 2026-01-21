@@ -1,4 +1,5 @@
-const TAG_ID = import.meta.env.VITE_GTAG_ID
+const DEFAULT_GTAG_ID = 'AW-16945754933'
+const TAG_ID = import.meta.env.VITE_GTAG_ID || DEFAULT_GTAG_ID
 const CONVERSION_LABEL = import.meta.env.VITE_GOOGLE_ADS_CONVERSION_LABEL
 const EXPLICIT_SEND_TO = import.meta.env.VITE_GOOGLE_ADS_SEND_TO
 
