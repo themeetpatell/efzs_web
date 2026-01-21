@@ -441,7 +441,7 @@ const Webinar = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="speaker-avatar">
-              <div className="speaker-initials">MR</div>
+              <img src="/ramshad.jpg" alt="Mohamed Ramshadali" className="speaker-photo" />
             </div>
             <div className="speaker-info">
               <h3 className="speaker-name">Mohamed Ramshadali</h3>
@@ -455,7 +455,7 @@ const Webinar = () => {
                 With years of experience helping entrepreneurs establish their businesses in Dubai, Mohamed brings invaluable 
                 insights into navigating the UAE business landscape.
               </p>
-              <a href="#" className="speaker-linkedin">
+              <a href="https://www.linkedin.com/in/mohamed-ramshadali-27b2b21a5/" className="speaker-linkedin">
                 <FaLinkedin />
               </a>
             </div>
