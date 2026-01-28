@@ -147,15 +147,22 @@ const LandingFooter = () => {
         <div className="footer-divider-modern"></div>
 
         <div className="footer-bottom-modern">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="footer-copyright"
-          >
-            &copy; {currentYear} Easy Free Zone Setup. All rights reserved.
-          </motion.p>
+          <div className="footer-bottom-content">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="footer-copyright"
+            >
+              &copy; {currentYear} Easy Free Zone Setup. All rights reserved.
+            </motion.p>
+            <div className="footer-legal-links">
+              <Link to="/privacy" className="footer-legal-link">Privacy Policy</Link>
+              <span className="footer-separator">|</span>
+              <Link to="/terms" className="footer-legal-link">Terms of Service</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
