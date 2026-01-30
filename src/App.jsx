@@ -2,14 +2,20 @@ import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'r
 import { AnimatePresence } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import NavigationES from './components/NavigationES'
+import FooterES from './components/FooterES'
 import LandingNavigation from './components/LandingNavigation'
 import LandingFooter from './components/LandingFooter'
 import FloatingButtons from './components/FloatingButtons'
 import TrackingInitializer from './components/TrackingInitializer'
 import Home from './pages/Home'
+import HomeES from './pages/HomeES'
 import Services from './pages/Services'
+import ServicesES from './pages/ServicesES'
 import About from './pages/About'
+import AboutES from './pages/AboutES'
 import Contact from './pages/Contact'
+import ContactES from './pages/ContactES'
 import Resources from './pages/Resources'
 import Guides from './pages/Guides'
 import FAQ from './pages/FAQ'
@@ -41,10 +47,24 @@ function AppContent() {
     '/webinar',
   ]
   const isLandingPage = landingPaths.includes(location.pathname)
+  const isSpanishPage = location.pathname.startsWith('/es')
+
+  // Determine which Navigation and Footer to render
+  const renderNavigation = () => {
+    if (isLandingPage) return <LandingNavigation />
+    if (isSpanishPage) return <NavigationES />
+    return <Navigation />
+  }
+
+  const renderFooter = () => {
+    if (isLandingPage) return <LandingFooter />
+    if (isSpanishPage) return <FooterES />
+    return <Footer />
+  }
 
   return (
     <div className="App">
-      {isLandingPage ? <LandingNavigation /> : <Navigation />}
+      {renderNavigation()}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
@@ -71,9 +91,18 @@ function AppContent() {
           <Route path="/webinar" element={<Navigate to="/setting-up-your-business-in-dubai" replace />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
+          
+          {/* Spanish Routes */}
+          <Route path="/es" element={<HomeES />} />
+          <Route path="/es/servicios" element={<ServicesES />} />
+          <Route path="/es/nosotros" element={<AboutES />} />
+          <Route path="/es/contacto" element={<ContactES />} />
+          <Route path="/es/free-zone" element={<FreeZone />} />
+          <Route path="/es/mainland" element={<Mainland />} />
+          <Route path="/es/visa-freelance" element={<FreelanceVisa />} />
         </Routes>
       </AnimatePresence>
-      {isLandingPage ? <LandingFooter /> : <Footer />}
+      {renderFooter()}
       {!isLandingPage && <FloatingButtons />}
     </div>
   )

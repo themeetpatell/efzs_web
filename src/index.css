@@ -4825,3 +4825,61 @@ button {
     display: none;
   }
 }
+
+
+/* ===== Language Switcher Styles ===== */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: var(--bg-muted);
+  color: var(--blue-primary);
+}
+
+.lang-btn.active {
+  background: var(--blue-primary);
+  color: white;
+}
+
+.lang-divider {
+  color: var(--border-soft);
+  font-weight: 300;
+}
+
+.desktop-lang-switcher {
+  margin-right: 16px;
+}
+
+.mobile-lang-switcher {
+  display: none;
+  justify-content: center;
+  margin: 16px 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+
+@media (max-width: 991px) {
+  .desktop-lang-switcher {
+    display: none;
+  }
+  
+  .mobile-lang-switcher {
+    display: flex;
+  }
+}
+
